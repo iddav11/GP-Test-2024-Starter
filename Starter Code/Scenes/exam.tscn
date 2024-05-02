@@ -16,7 +16,7 @@ position = Vector2(511, 973)
 scale = Vector2(0.946841, 7.12)
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
-scale = Vector2(0.913876, 0.594498)
+scale = Vector2(2.51921, 0.594498)
 script = ExtResource("1_sevei")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
@@ -29,7 +29,7 @@ scale = Vector2(1.15567, 0.236249)
 stream = ExtResource("2_dh26i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2(54.76, 1)
+scale = Vector2(93.4571, 1)
 shape = SubResource("RectangleShape2D_2vxvg")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
@@ -37,5 +37,9 @@ scale = Vector2(1.99134, 2.00185)
 texture = ExtResource("1_k3jih")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_848lr")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(354, 477)
+zoom = Vector2(0.9, 0.9)
 
 [connection signal="area_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_area_entered"]

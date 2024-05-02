@@ -1,7 +1,12 @@
 extends Button
 
-#@onready var godotblock2d = get_node("GodotBlock")
-#
-##func _on_button_down():
-	#godotblock2d.new()
-	#pass # Replace with function body.
+@onready var scene = preload("res://Scenes/GodotBlock.tscn")
+@onready var instance = scene.instantiate
+
+#func _ready():
+	#var scene = preload("res://Scenes/GodotBlock.tscn")
+	#var instance = scene.instantiate
+	
+func _on_button_down():
+	add_child(instance)
+	
