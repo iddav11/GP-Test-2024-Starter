@@ -2,13 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://mxxn1wfdfuli" path="res://sprites/10x10.png" id="1_k3jih"]
 [ext_resource type="Script" path="res://Scripts/DestroyArea2D.gd" id="1_sevei"]
-[ext_resource type="PackedScene" uid="uid://cjsd2yjkectm6" path="res://Scenes/GodotBlock.tscn" id="2_6n7dd"]
 [ext_resource type="AudioStream" uid="uid://daeeqhtb2f8cn" path="res://sounds/Explosion31.wav" id="2_dh26i"]
+[ext_resource type="Script" path="res://Scripts/InstantiateScript.gd" id="3_73scd"]
 [ext_resource type="PackedScene" uid="uid://2ttsanfv0ojr" path="res://Scenes/canvas_layer.tscn" id="4_848lr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vxvg"]
 
 [node name="root" type="Node2D"]
+script = ExtResource("3_73scd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(511, 973)
@@ -34,12 +35,6 @@ shape = SubResource("RectangleShape2D_2vxvg")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
 scale = Vector2(1.99134, 2.00185)
 texture = ExtResource("1_k3jih")
-
-[node name="GodotBlock" parent="." instance=ExtResource("2_6n7dd")]
-position = Vector2(112, 442)
-
-[node name="GodotBlock2" parent="." instance=ExtResource("2_6n7dd")]
-position = Vector2(414, 299)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_848lr")]
 

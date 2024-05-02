@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://2ttsanfv0ojr"]
+[gd_scene load_steps=6 format=3 uid="uid://2ttsanfv0ojr"]
 
 [ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="1_kcd26"]
 [ext_resource type="Texture2D" uid="uid://mxxn1wfdfuli" path="res://sprites/10x10.png" id="1_ydr3w"]
 [ext_resource type="Script" path="res://Scenes/ButtonPress.gd" id="2_xx0xe"]
+[ext_resource type="AudioStream" uid="uid://dxtc48o5qwpl8" path="res://sounds/Laser_Shoot38.wav" id="3_7bpqd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3qky2"]
 font = ExtResource("1_kcd26")
@@ -17,6 +18,9 @@ offset_bottom = 138.0
 scale = Vector2(14.08, 10.76)
 icon = ExtResource("1_ydr3w")
 script = ExtResource("2_xx0xe")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button"]
+stream = ExtResource("3_7bpqd")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
