@@ -12,23 +12,31 @@ func _ready():
 		print(array[0])
 		add_child(instance)
 	
-	
-	
-	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	
+func _process(delta):
+	
+	pass
 
 
 
+#func _on_h_slider_drag_ended(value_changed):
+	#for i in range(10):
+		#var scene = preload("res://Scenes/GodotBlock.tscn")
+		#var instance = scene.instantiate()
+		#print(array[0])
+		#add_child(instance)
+	#
+	pass # Replace with function body.
 
-func _on_h_slider_drag_ended(value_changed):
-	for i in range(10):
+
+func _on_h_slider_value_changed(value):
+	for i in range(value):
 		var scene = preload("res://Scenes/GodotBlock.tscn")
 		var instance = scene.instantiate()
 		print(array[0])
 		add_child(instance)
-	
 	pass # Replace with function body.
