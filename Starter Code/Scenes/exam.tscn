@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bunyohpobvu8b"]
+[gd_scene load_steps=8 format=3 uid="uid://bunyohpobvu8b"]
 
 [ext_resource type="Texture2D" uid="uid://mxxn1wfdfuli" path="res://sprites/10x10.png" id="1_k3jih"]
 [ext_resource type="Script" path="res://Scripts/DestroyArea2D.gd" id="1_sevei"]
+[ext_resource type="Script" path="res://Scenes/HSlider_Spawner.gd" id="2_4qer8"]
 [ext_resource type="AudioStream" uid="uid://daeeqhtb2f8cn" path="res://sounds/Explosion31.wav" id="2_dh26i"]
 [ext_resource type="Script" path="res://Scripts/InstantiateScript.gd" id="3_73scd"]
 [ext_resource type="PackedScene" uid="uid://2ttsanfv0ojr" path="res://Scenes/canvas_layer.tscn" id="4_848lr"]
@@ -10,6 +11,11 @@
 
 [node name="root" type="Node2D"]
 script = ExtResource("3_73scd")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("2_4qer8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(511, 973)
@@ -42,4 +48,5 @@ texture = ExtResource("1_k3jih")
 position = Vector2(354, 477)
 zoom = Vector2(0.9, 0.9)
 
+[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="area_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_area_entered"]
