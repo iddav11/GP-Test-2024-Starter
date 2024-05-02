@@ -1,20 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://bunyohpobvu8b"]
+[gd_scene load_steps=8 format=3 uid="uid://bunyohpobvu8b"]
 
 [ext_resource type="Texture2D" uid="uid://mxxn1wfdfuli" path="res://sprites/10x10.png" id="1_k3jih"]
 [ext_resource type="Script" path="res://Scripts/DestroyArea2D.gd" id="1_sevei"]
 [ext_resource type="AudioStream" uid="uid://daeeqhtb2f8cn" path="res://sounds/Explosion31.wav" id="2_dh26i"]
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="2_yvxri"]
 [ext_resource type="Script" path="res://Scripts/InstantiateScript.gd" id="3_73scd"]
-[ext_resource type="PackedScene" uid="uid://2ttsanfv0ojr" path="res://Scenes/canvas_layer.tscn" id="4_848lr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcubf"]
+font = ExtResource("2_yvxri")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vxvg"]
 
 [node name="root" type="Node2D"]
 script = ExtResource("3_73scd")
 
-[node name="HSlider" type="HSlider" parent="."]
-offset_right = 661.0
-offset_bottom = 16.0
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer2"]
+offset_right = 460.0
+offset_bottom = 71.0
 max_value = 10.0
+
+[node name="Button" type="Button" parent="CanvasLayer2"]
+offset_left = 10.0
+offset_top = 84.0
+offset_right = 18.0
+offset_bottom = 92.0
+scale = Vector2(2.36, 2.24)
+text = "SPAWN BLOCKS
+"
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_top = -54.0
+offset_right = 90.0
+offset_bottom = -31.0
+scale = Vector2(4.36, 3.52)
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_gcubf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(511, 973)
@@ -41,12 +63,11 @@ shape = SubResource("RectangleShape2D_2vxvg")
 scale = Vector2(1.99134, 2.00185)
 texture = ExtResource("1_k3jih")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("4_848lr")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(354, 477)
 zoom = Vector2(0.9, 0.9)
 
-[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
-[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="drag_ended" from="CanvasLayer2/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer2/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="button_down" from="CanvasLayer2/Button" to="." method="_on_button_button_down"]
 [connection signal="area_entered" from="StaticBody2D/Area2D" to="StaticBody2D/Area2D" method="_on_area_entered"]

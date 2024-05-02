@@ -1,6 +1,7 @@
 extends Node
 var array2 = [6,3]
 var array = [1, 2, 3, 4]
+var value
 
 
 
@@ -30,4 +31,13 @@ func _on_h_slider_value_changed(value):
 		var instance = scene.instantiate()
 		print(array[0])
 		add_child(instance)
+	pass # Replace with function body.
+
+
+#func _on_button_button_down():
+	#for i in range(value):
+		#var scene = preload("res://Scenes/GodotBlock.tscn")
+		#var instance = scene.instantiate()
+		#print(array[0])
+		#add_child(instance)
 	pass # Replace with function body.
