@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c04bq1f175qhw"]
+[gd_scene load_steps=4 format=3 uid="uid://cjsd2yjkectm6"]
 
-[ext_resource type="Texture2D" uid="uid://rb8smo0f45mc" path="res://icon.svg" id="1_6n2dn"]
+[ext_resource type="Texture2D" uid="uid://rb8smo0f45mc" path="res://icon.svg" id="1_8o2d2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83nga"]
 
@@ -9,12 +9,8 @@
 [node name="GodotBlock" type="RigidBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.14032, 6.75501)
+scale = Vector2(4.14032, 3.55501)
 shape = SubResource("RectangleShape2D_83nga")
-
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.15625, 0.160194)
-texture = ExtResource("1_6n2dn")
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D"]
 scale = Vector2(0.130208, 0.121359)
@@ -22,3 +18,9 @@ scale = Vector2(0.130208, 0.121359)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
 scale = Vector2(8.3093, 9.97846)
 shape = SubResource("RectangleShape2D_prmlw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D/Area2D"]
+scale = Vector2(1.2, 1.32)
+texture = ExtResource("1_8o2d2")
+
+[connection signal="area_entered" from="CollisionShape2D/Area2D" to="CollisionShape2D/Area2D" method="_on_area_entered"]
