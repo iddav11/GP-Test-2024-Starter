@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ttsanfv0ojr"]
+
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="1_kcd26"]
+[ext_resource type="Texture2D" uid="uid://mxxn1wfdfuli" path="res://sprites/10x10.png" id="1_ydr3w"]
+[ext_resource type="Script" path="res://Scenes/ButtonPress.gd" id="2_xx0xe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3qky2"]
+font = ExtResource("1_kcd26")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 130.0
+offset_right = 17.0
+offset_bottom = 138.0
+scale = Vector2(14.08, 10.76)
+icon = ExtResource("1_ydr3w")
+script = ExtResource("2_xx0xe")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(3.02622, 1.82612)
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_3qky2")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
