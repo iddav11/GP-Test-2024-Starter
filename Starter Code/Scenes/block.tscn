@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwi6lmhwtpkeh"]
 
-[ext_resource type="Script" path="res://block.gd" id="1_4urbb"]
+[ext_resource type="Script" path="res://Scripts/block.gd" id="1_4urbb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_04on2"]
 
@@ -10,11 +10,13 @@
 size = Vector2(48, 50)
 
 [node name="block" type="StaticBody2D"]
+position = Vector2(-2, 0)
 script = ExtResource("1_4urbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.592157, 0.337255, 0.784314, 1)
 material = SubResource("CanvasItemMaterial_04on2")
+position = Vector2(1, 0)
 scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_eic81")
 
